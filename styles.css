@@ -1,0 +1,345 @@
+ /* ====== COLOR THEME ====== */
+:root {
+    --orange: #FF8C42;
+    --dark-orange: #E26D5A;
+    --green: #4CB944;
+    --dark-green: #2E8B57;
+    --black: #333333;
+    --light-bg: #F8F9FA;
+    --white: #FFFFFF;
+    --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+/* ====== BASE STYLES ====== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: var(--black);
+    background-color: var(--light-bg);
+    padding-top: 80px;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* ====== STICKY HEADER ====== */
+#mainHeader {
+    background: var(--white);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: var(--transition);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    padding: 15px 0;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.profile-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.profile-img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    border: 3px solid var(--orange);
+    object-fit: cover;
+}
+
+/* ====== BURGER MENU ====== */
+.burger-menu {
+    display: none;
+    cursor: pointer;
+    z-index: 1001;
+    padding: 10px;
+}
+
+.burger-line {
+    width: 25px;
+    height: 3px;
+    background: var(--dark-green);
+    margin: 5px;
+    transition: var(--transition);
+}
+
+/* ====== NAVIGATION ====== */
+#mainNav ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+#mainNav ul li a {
+    color: var(--dark-green);
+    font-weight: 600;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: var(--transition);
+}
+
+#mainNav ul li a:hover {
+    color: var(--orange);
+    background: rgba(255, 140, 66, 0.1);
+}
+
+/* ====== BUTTONS ====== */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.download-btn {
+    background: var(--orange);
+    color: var(--white);
+}
+
+.download-btn:hover {
+    background: var(--dark-orange);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+}
+
+/* ====== SECTIONS ====== */
+.section {
+    padding: 80px 0;
+}
+
+h2 {
+    font-size: 2.2rem;
+    margin-bottom: 40px;
+    color: var(--dark-green);
+    position: relative;
+}
+
+h2 span {
+    position: relative;
+    z-index: 1;
+    padding-right: 20px;
+    background: var(--light-bg);
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 15px;
+    width: 100%;
+    height: 3px;
+    background: var(--orange);
+    z-index: 0;
+}
+
+/* ====== TIMELINE ====== */
+.timeline {
+    position: relative;
+    padding-left: 30px;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 7px;
+    top: 0;
+    height: 100%;
+    width: 3px;
+    background: var(--orange);
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 30px;
+    padding-left: 30px;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 5px;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: var(--green);
+    border: 3px solid var(--orange);
+}
+
+.timeline-date {
+    font-weight: bold;
+    color: var(--orange);
+    margin-bottom: 5px;
+}
+
+.timeline-content {
+    background: var(--white);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+
+/* ====== SKILLS ====== */
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.skill-category {
+    background: var(--white);
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+
+.skill-bar {
+    height: 10px;
+    background: #eee;
+    border-radius: 5px;
+    margin: 15px 0;
+    overflow: hidden;
+}
+
+.skill-level {
+    height: 100%;
+    background: var(--green);
+    border-radius: 5px;
+    width: 0;
+    transition: width 1s ease-in-out;
+}
+
+/* ====== CONTACT FORM ====== */
+.contact-form {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: inherit;
+    transition: var(--transition);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--orange);
+    box-shadow: 0 0 0 3px rgba(255, 140, 66, 0.2);
+}
+
+#sendBtn {
+    background: var(--orange);
+    color: white;
+    border: none;
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+}
+
+#sendBtn:hover {
+    background: var(--dark-orange);
+}
+
+/* ====== FOOTER ====== */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: var(--dark-green);
+    color: white;
+}
+
+/* ====== RESPONSIVE DESIGN ====== */
+@media (max-width: 768px) {
+    .burger-menu {
+        display: block;
+    }
+
+    #mainNav ul {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        height: 100vh;
+        background: var(--white);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+        transition: var(--transition);
+        box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+    }
+
+    #mainNav ul.active {
+        right: 0;
+    }
+
+    .burger-menu.toggle .burger-line:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .burger-menu.toggle .burger-line:nth-child(2) {
+        opacity: 0;
+    }
+
+    .burger-menu.toggle .burger-line:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+
+    .section {
+        padding: 60px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .profile-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .profile-img {
+        margin-bottom: 10px;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+}
